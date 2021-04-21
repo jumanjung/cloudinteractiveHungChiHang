@@ -12,7 +12,7 @@ import com.cloudinteractiveHungChiHang.img.DpUtil;
 import com.cloudinteractiveHungChiHang.img.ImageCache;
 import com.cloudinteractiveHungChiHang.img.ImageFetcher;
 import com.cloudinteractiveHungChiHang.presenter.ItemPresenter;
-import com.squareup.picasso.Picasso;
+
 
 public class ItemActivity extends AppCompatActivity implements ItemPresenter.View {
     ItemPresenter presenter;

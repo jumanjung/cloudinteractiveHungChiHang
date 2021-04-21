@@ -29,7 +29,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-import okhttp3.logging.HttpLoggingInterceptor;
+
 
 /**
  * A simple subclass of {@link ImageResizer} that fetches and resizes images fetched from a URL.
@@ -244,13 +244,11 @@ public class ImageFetcher extends ImageResizer {
 
 
             //OkHttpClient client = new OkHttpClient().newBuilder().cache(cache).build();
-            HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
-            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
             OkHttpClient client = new OkHttpClient.Builder()
                     .connectTimeout(10, TimeUnit.SECONDS)//設定連線超時
                     .readTimeout(10, TimeUnit.SECONDS)//讀取超時
                     .writeTimeout(10, TimeUnit.SECONDS)//寫入超時
-                    .addInterceptor(interceptor)//新增日誌攔截器
                     //.addNetworkInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)//新增快取攔截器
 
                     .build();
